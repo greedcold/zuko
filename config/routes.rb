@@ -8,6 +8,8 @@ end
   get 'pages/about'
 
   get 'pages/contact'
+  get 'sales' => "orders#sales"
+  get 'purchases' => "orders#purchases"
   get 'seller' => "listings#seller"
 
 root 'listings#index'
