@@ -11,6 +11,12 @@ end
 validates_attachment_content_type :image, content_type: %w(image/jpeg image/jpg image/png)  # проверка контента(картинки) на соответствие формату
 belongs_to :user
 has_many :orders
+
+  def self.search(search)
+    if search
+      self.where("name like ?", "%#{search}%")
+    else
+      self.all
+    end
+  end
 end
-
-

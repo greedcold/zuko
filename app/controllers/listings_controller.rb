@@ -10,6 +10,7 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     @listings = Listing.all.order("created_at DESC")
+    @listings = Listing.search(params[:search])
   end
 
   # GET /listings/1
