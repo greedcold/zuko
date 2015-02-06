@@ -11,6 +11,7 @@ end
 validates_attachment_content_type :image, content_type: %w(image/jpeg image/jpg image/png)  # проверка контента(картинки) на соответствие формату
 belongs_to :user
 has_many :orders
+has_many :comments
 
   def self.search(search)
     if search
