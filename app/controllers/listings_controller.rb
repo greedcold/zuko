@@ -68,6 +68,18 @@ class ListingsController < ApplicationController
     end
   end
 
+  def upvote
+      @listing = Listing.find(params[:id])
+      @listing.liked_by current_user
+      redirect_to @listing
+  end
+
+  def downvote
+      @listing = Listing.find(params[:id])
+      @listing.downvote_from current_user
+      redirect_to @listing
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing

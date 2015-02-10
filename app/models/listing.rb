@@ -1,5 +1,6 @@
 class Listing < ActiveRecord::Base
 
+
 if Rails.env.development?
  # has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100>" }, :default_url => "default.png",
 #else
@@ -12,6 +13,15 @@ validates_attachment_content_type :image, content_type: %w(image/jpeg image/jpg 
 belongs_to :user
 has_many :orders
 has_many :comments
+
+acts_as_votable
+
+# Returns posts from the users being followed by the given user.
+  def self.from_users_followed_by(user)
+    followed_user_ids = user.followed_user_ids
+    where("user_id IN (:followed_user_ids) OR user_id = :user_id",
+          followed_user_ids: followed_user_ids, user_id: user)
+  end
 
   def self.search(search)
     if search

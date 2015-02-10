@@ -68,4 +68,10 @@ root 'listings#index'
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+    resources :listing do
+  member do
+    put "like", to: "listings#upvote"
+    put "dislike", to: "listings#downvote"
+  end
+end
 end

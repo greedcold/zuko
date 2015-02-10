@@ -13,6 +13,8 @@
   <br>
   <div class="center">
     <%= link_to "Buy It Now", new_listing_order_path(@listing), class: "btn btn-primary" %>
+    <%= link_to "Like", like_listing_path, method: :put, :remote => true %>
+    <%= link_to "Dislike", dislike_listing_path, method: :put, :remote => true  %>
   </div>
   </div>
 </div>

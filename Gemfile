@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem "paperclip", "~> 4.2"
 gem "paperclip-dropbox", ">= 1.1.7"
+gem 'acts_as_votable', '~> 0.10.0'
 gem "figaro"
 gem 'devise'
 gem 'rubocop', require: false
