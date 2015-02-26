@@ -1,25 +1,28 @@
-<div class="jumbotron">
-  <h1>Кричащий заголовок</h1>
-  <h2>Текст о том для чего же этот сайт</h2>
-</div>
+<div id="masonry-container" class="comments.transitions-enabled infinite-scroll clearfix">
 
-<div class="center">
-  <div class="row">
-    <% @listings.each do |listing| %>
-      <div class="col-md-3">
-        <div class="thumbnail">
-          <%= link_to image_tag(listing.image.url), listing %>
-          <div class="caption">
-            <h3><%= listing.name %></h3>
-            <p><%= number_to_currency(listing.price) %></p>
+  <div class="jumbotron">
+    <h1>Кричащий заголовок</h1>
+    <h2>Текст о том для чего же этот сайт</h2>
+  </div>
 
+  <div class="center">
+    <div class="row">
+      <% @listings.each do |listing| %>
+       <div class=".box.panel.panel-default">
+        <div class="col-md-3">
+          <div class="thumbnail">
+            <%= link_to image_tag(listing.image.url), listing %>
+            <div class="caption">
+              <h3><%= listing.name %></h3>
+              <p><%= number_to_currency(listing.price) %></p>
+            </div>
           </div>
+         </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-
 <br>
 
 <%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>

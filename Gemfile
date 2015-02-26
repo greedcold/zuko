@@ -15,6 +15,7 @@ gem "paperclip-dropbox", ">= 1.1.7"
 gem 'acts_as_votable', '~> 0.10.0'
 gem "figaro"
 gem 'devise'
+gem 'masonry-rails'
 gem 'rubocop', require: false
 
 group :production do
