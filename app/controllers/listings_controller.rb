@@ -16,6 +16,9 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
+    @listing = Listing.find(params[:id])
+    @comments = @listing.comments
+    @new_comment = @listing.comments.new
   end
 
   # GET /listings/new

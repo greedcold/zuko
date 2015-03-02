@@ -35,17 +35,9 @@
   </p>
 <% end %>
 
-<h2>Add a comment:</h2>
-<%= form_for([@listing, @listing.comments.build]) do |f| %>
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-
 <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
 <%= link_to 'Back', listings_path,class: "btn btn-link" %>
 
+<div id="comment-form">
+  <%= render 'comments/comment_form' %>
+</div>
