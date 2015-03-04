@@ -1,3 +1,10 @@
+<h2>Comments</h2>
+<% @listing.comments.each do |comment| %>
+  <p>
+    <strong><% '#{username}:' %></strong>
+    <%= comment.body %>
+  </p>
+<% end %>
 
 <h2>Add a comment:</h2>
 <%= form_for [@listing, @listing.comments.build], remote: true do |f| %>
@@ -9,5 +16,3 @@
     <%= f.submit %>
   </p>
 <% end %>
-
-

@@ -18,22 +18,14 @@
 </div>
 
 <div class="like">
-<%= link_to "", like_listing_path, method: :put, :remote => true, class: "glyphicon glyphicon-plus" %>
-<%= @listing.get_downvotes.size %>
+  <%= link_to "", like_listing_path, method: :put, :remote => true, class: "glyphicon glyphicon-plus" %>
+  <%= @listing.get_downvotes.size %>
 </div>
 
 <div class="dislike">
-<%= link_to "", dislike_listing_path, method: :put, :remote => true, class: "glyphicon glyphicon-minus" %>
-<%= @listing.get_upvotes.size %>
+  <%= link_to "", dislike_listing_path, method: :put, :remote => true, class: "glyphicon glyphicon-minus" %>
+  <%= @listing.get_upvotes.size %>
 </div>
-
-<h2>Comments</h2>
-<% @listing.comments.each do |comment| %>
-  <p>
-    <strong><% '#{username}:' %></strong>
-    <%= comment.body %>
-  </p>
-<% end %>
 
 <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
 <%= link_to 'Back', listings_path,class: "btn btn-link" %>
